@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    </link>
 </head>
 
 <body>
@@ -58,21 +57,16 @@
                 showInformation(category);           
             };
 
-            
             listItem.appendChild(link); 
             navList.appendChild(listItem); 
         });
 
-        
-        
         function showInformation(category){
             const filteredArticle = resources.filter(item => item.category === category); 
             const articleContent = filteredArticle[0];
 
             articleTitle.innerText = articleContent.category;
             articleText.innerText = articleContent.text;
-
-            
 
             articleContent.sources.map(item => {
                 
@@ -84,11 +78,8 @@
             
             listItem.appendChild(link); 
             articleList.appendChild(listItem); 
-        });
-
- 
+        }); 
         }
-
     </script>
 </body>
 
