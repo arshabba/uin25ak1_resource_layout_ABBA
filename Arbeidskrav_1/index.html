@@ -21,39 +21,74 @@
             </ul>
         </nav>
         <article>
-
+            <h1></h1>
+            <p></p>
+            <ul></ul>
         </article>
     </main>
 
     <script src="ressurser.js"></script>
     <script>
-        const myList = document.querySelector("ul");
+        const navList = document.querySelector("nav ul");
+        const article = document.querySelector("article");
+        const articleTitle = document.querySelector("article h1");
+        const articleText = document.querySelector("article p");
+        const articleList = document.querySelector("article ul");
         const firstItem = resources[0];
 
-        resources.forEach(item => {
+        resources.map(item => {
             const listItem = document.createElement('li'); 
             const link = document.createElement('a');
-
-            link.textContent = item.category;
+            const category = item.category;
+            link.textContent = category;
             link.href = "#";
 
             if (item === firstItem) {
                 listItem.classList.add('active');
                 link.classList.add('active');
+                showInformation(category);
             }
 
             listItem.onclick = () => {
                 document.querySelectorAll('nav ul li').forEach(item => item.classList.remove('active'));
                 document.querySelectorAll('nav ul li a').forEach(item => item.classList.remove('active'));
                 listItem.classList.add('active');
-                link.classList.add('active');
+                link.classList.add('active');  
+                articleList.innerHTML = ''; 
+                showInformation(category);           
             };
 
+            
             listItem.appendChild(link); 
-            myList.appendChild(listItem); 
+            navList.appendChild(listItem); 
         });
 
-        const article = document.querySelector("article");
+        
+        
+        function showInformation(category){
+            const filteredArticle = resources.filter(item => item.category === category); 
+            const articleContent = filteredArticle[0];
+
+            articleTitle.innerText = articleContent.category;
+            articleText.innerText = articleContent.text;
+
+            
+
+            articleContent.sources.map(item => {
+                
+            const listItem = document.createElement('li'); 
+            const link = document.createElement('a');
+            
+            link.textContent = item.title;
+            link.href = item.url;
+            
+            listItem.appendChild(link); 
+            articleList.appendChild(listItem); 
+        });
+
+ 
+        }
+
     </script>
 </body>
 

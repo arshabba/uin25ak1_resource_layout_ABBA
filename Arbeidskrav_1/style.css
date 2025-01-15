@@ -19,7 +19,7 @@ main{
     background-color: var(--white);
 }
 
-ul{
+nav ul{
     margin: 0;
     list-style-type: none;
     display: flex;
@@ -30,7 +30,7 @@ ul{
     background-color: var(--lysegraa);
 }
 
-ul li{
+nav ul li{
     font-weight: 700;
   
     width: 100%;
@@ -39,7 +39,7 @@ ul li{
     color: white;
 }
 
-a{
+nav ul li a{
     justify-content: center;
     display: flex;
     align-items: center;
@@ -53,6 +53,14 @@ a{
 .active{
     background-color: var(--white);
     color: black !important;
+}
+
+article{
+    padding: 4rem;  
+}
+
+article ul li a {
+    color: var(--lyseblaa)
 }
 
 
