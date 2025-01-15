@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbeidskrav 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    </link>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul>
+
+            </ul>
+        </nav>
+        <article>
+
+        </article>
+    </main>
+
+    <script src="ressurser.js"></script>
+    <script>
+        const myList = document.querySelector("ul");
+        const firstItem = resources[0];
+
+        resources.forEach(item => {
+            const listItem = document.createElement('li'); 
+            const link = document.createElement('a');
+
+            link.textContent = item.category;
+            link.href = "#";
+
+            if (item === firstItem) {
+                listItem.classList.add('active');
+                link.classList.add('active');
+            }
+
+            listItem.onclick = () => {
+                document.querySelectorAll('nav ul li').forEach(item => item.classList.remove('active'));
+                document.querySelectorAll('nav ul li a').forEach(item => item.classList.remove('active'));
+                listItem.classList.add('active');
+                link.classList.add('active');
+            };
+
+            listItem.appendChild(link); 
+            myList.appendChild(listItem); 
+        });
+
+        const article = document.querySelector("article");
+    </script>
+</body>
+
+</html>

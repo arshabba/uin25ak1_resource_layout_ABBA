@@ -1,0 +1,59 @@
+:root{
+    --white: white;
+    --lysegraa: #E1E5EE;
+    --morkeblaa: #2A324B;
+    --lyseblaa: #58699D;
+
+}
+
+body{
+    font-family: "Montserrat", serif;
+    background-color: var(--lysegraa);
+    padding: 10%;
+    box-sizing: border-box;
+    margin:0;
+  
+}
+
+main{
+    background-color: var(--white);
+}
+
+ul{
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    gap: 1rem;  
+    padding: 0;
+    background-color: var(--lysegraa);
+}
+
+ul li{
+    font-weight: 700;
+  
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--morkeblaa);
+    color: white;
+}
+
+a{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    height: 100%;
+    color: white;
+    
+}
+
+.active{
+    background-color: var(--white);
+    color: black !important;
+}
+
+
+
